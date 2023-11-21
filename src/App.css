@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background-color: #1e173f;
+  color: #ededed;
+}
+
+.light{
+  font-weight: 300;
+}
+.regular{
+  font-weight: 400;
+}
+.medium{
+  font-weight: 500;
+}
+.semiBold{
+  font-weight: 600;
+}
+.bold{
+  font-weight: 700;
+}
+.semiBlack{
+  font-weight: 800;
+}
+.black{
+  font-weight: 900;
+}
