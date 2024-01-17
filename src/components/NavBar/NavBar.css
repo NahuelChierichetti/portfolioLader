@@ -1,0 +1,7 @@
+.navbar-container {
+    position: absolute;
+    width: 100%;
+    background-color: transparent;
+    pointer-events: auto;
+    z-index: 1;
+}

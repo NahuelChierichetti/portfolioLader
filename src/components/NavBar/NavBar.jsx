@@ -1,12 +1,14 @@
 import LogoLader from '../../assets/img/logo-lader.png'
+import './NavBar.css'
+
 const NavBar = () => {
   return (
-    <div className="container-fluid mx-auto">
+    <div className="container-fluid mx-auto navbar-container">
         <header className="top-0 z-50 container mx-auto">
-            <nav className="flex items-center justify-between p-6 lg:px-8">
+            <nav className="flex items-center justify-between p-4 lg:px-8 bg-transparent">
                 <div className="flex items-center">
                     <a href="#" aria-label="Homepage">
-                        <img src={LogoLader} alt="Agencia Lader" className='w-[200px] h-[80px]'/>
+                        <img src={LogoLader} alt="Agencia Lader" className='w-[150px] h-[60px]'/>
                     </a>
                 </div>
                 <div className='flex items-center lg:flex-3'>
