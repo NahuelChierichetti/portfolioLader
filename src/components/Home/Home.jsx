@@ -1,6 +1,6 @@
 import './Home.css';
 import bgLader from '../../assets/video/bg-lader.mp4'
-import MainProject from '../MainProject/MainProject';
+import ProjectListContainer from '../ProjectListContainer/ProjectListContainer';
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
                 <h1 className='title-banner'>Portfolio | Agencia Lader</h1>
             </div>
         </div>
-        <MainProject />
+        <ProjectListContainer />
     </>
    
   );
