@@ -23,7 +23,20 @@
     opacity: 1;
   }
   
-  .card-proyecto p {
+  .card-proyecto .title-proyecto {
+    position: absolute;
+    bottom: 50px;
+    left: 20px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .card-proyecto:hover .title-proyecto {
+    opacity: 1;
+  }
+
+  .card-proyecto .link-proyecto {
     position: absolute;
     bottom: 20px;
     left: 20px;
@@ -32,6 +45,6 @@
     transition: opacity 0.3s ease;
   }
   
-  .card-proyecto:hover p {
+  .card-proyecto:hover .link-proyecto {
     opacity: 1;
   }
