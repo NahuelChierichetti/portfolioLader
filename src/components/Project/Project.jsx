@@ -2,7 +2,7 @@ import React from 'react'
 import './Project.css'
 import { Link } from 'react-router-dom';
 
-const Project = ({ nombre, imagen }) => {
+const Project = ({ id, nombre, imagen }) => {
     const divStyle = {
       backgroundImage: `url(${imagen})`,
       backgroundSize: 'cover',
@@ -13,7 +13,7 @@ const Project = ({ nombre, imagen }) => {
     return (
       <div className='card-proyecto' style={divStyle}>
         <p className='title-proyecto'>{nombre}</p>
-        <Link className='link-proyecto'>Ver proyecto</Link>
+        <Link to={`/project/${id}`} className='link-proyecto'>Ver proyecto</Link>
       </div>
     );
 };
