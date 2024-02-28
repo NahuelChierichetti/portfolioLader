@@ -1,0 +1,43 @@
+.navbar-container{
+    position: relative;
+}
+.container-detail {
+    margin: 100px 60px 60px;
+}
+.container-detail-heading {
+    display: flex;
+    justify-content: space-between;
+}
+.detail-title {
+    width: 60%;
+}
+.detail-datos {
+    width: 25%;
+    margin-top: 20px;
+}
+.detail-datos p{
+    line-height: 1.8em;
+}
+.detail-title h2 {
+    font-size: 4em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+p.title-serv {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #b7f200;
+}
+.detail-title p {
+    width: 90%;
+    font-weight: 300;
+    line-height: 1.8em;
+}
+.container-detail-images {
+    margin: 80px 0px;
+}
+.container-detail-images img {
+    margin-bottom: 80px;
+}

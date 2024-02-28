@@ -35,10 +35,23 @@ const ProjectListContainer = () => {
 
     return (
         <div>
-            <div className="container-buttons">
-                <button onClick={() => handleServiceClick('Desarrollo Web')}>Desarrollo Web</button>
-                <button onClick={() => handleServiceClick('Diseño UX/UI')}>Diseño UX/UI</button>
-                <button onClick={() => handleServiceClick('Paid Media')}>Paid Media</button>
+            
+                <div className='title-proyectos'>
+                    <h2>Proyectos realizados</h2>
+                </div>
+                <div className='container-heading-proyectos'>
+                <div className='heading-proyectos'>
+                    
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ex esse sit alias minima, repellendus cum dicta nobis dolor doloremque, laboriosam quasi dolore facilis deserunt accusantium at libero numquam tenetur.</p>
+                </div>
+                <div className="container-buttons">
+                    <button onClick={() => handleServiceClick('')}>Todos</button>
+                    <button onClick={() => handleServiceClick('Desarrollo Web')}>Desarrollo Web</button>
+                    <button onClick={() => handleServiceClick('Diseño UX/UI')}>Diseño UX/UI</button>
+                    <button onClick={() => handleServiceClick('Diseño Gráfico')}>Diseño Gráfico</button>
+                    <button onClick={() => handleServiceClick('Paid Media')}>Paid Media</button>
+                    <button onClick={() => handleServiceClick('Redes Sociales')}>Redes Sociales</button>
+                </div>
             </div>
             <ProjectList data={data} />
         </div>

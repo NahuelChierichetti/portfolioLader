@@ -5,9 +5,9 @@ import './ProjectList.css'
 const ProjectList = ({data}) => {
   return (
     <div className='container-proyectos'>
-      {data.map((proyectos) => (
+      {data.map((proyectos, index) => (
         <div key={proyectos.id}>
-          <Project {...proyectos}/>
+          <Project {...proyectos} index={index}/>
         </div>
       ))}
     </div>

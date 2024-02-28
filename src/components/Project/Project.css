@@ -1,6 +1,6 @@
 .card-proyecto {
     height: 500px;
-    margin: 50px 25px;
+    margin: 50px 60px;
     border-radius: 20px;
     position: relative;
     overflow: hidden;
@@ -29,7 +29,10 @@
     color: white;
     opacity: 0;
     transition: opacity 0.3s ease;
-  }
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 2.5em;
+}
   
   .card-proyecto:hover .title-proyecto {
     opacity: 1;

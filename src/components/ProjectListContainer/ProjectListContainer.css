@@ -1,13 +1,40 @@
+.title-proyectos {
+    margin: 60px;
+}
+
+.title-proyectos h2 {
+    font-size: 4.5em;
+    margin-top: 100px;
+    font-weight: 700;
+}
+
+.heading-proyectos p {
+    font-weight: 300;
+    line-height: 1.8em;
+}
+
+.container-heading-proyectos {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 60px;
+}
+
+.heading-proyectos {
+    width: 30%;
+}
+
+
 .container-buttons {
     display: flex;
-    margin-top: 60px;
-    margin-bottom: 60px;
     justify-content: center;
+    width: auto;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .container-buttons button {
-    border: 2px solid ;
-    padding: 15px 30px;
-    margin: 0px 20px;
+    border: 2px solid;
+    padding: 10px 15px;
+    margin: 0px 5px;
     border-radius: 10px;
 }
