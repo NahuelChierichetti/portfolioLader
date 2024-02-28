@@ -1,5 +1,6 @@
 import LogoLader from '../../assets/img/logo-lader.png'
 import './NavBar.css'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
   return (
@@ -13,7 +14,7 @@ const NavBar = () => {
                 </div>
                 <div className='flex items-center lg:flex-3'>
                     <ul className='flex space-x-12'> 
-                        <li className='uppercase'>Proyectos</li>
+                        <li className='uppercase'><a href="#proyectos" smooth={true} duration={1000}>Proyectos</a></li>
                         <li className='uppercase'>Clientes</li>
                         <li className='uppercase'>Contacto</li>
                     </ul>

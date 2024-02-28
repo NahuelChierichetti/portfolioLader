@@ -12,7 +12,7 @@ const variants = {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 1.5,
+      duration: 1,
       delay: index*.1
     }
   })

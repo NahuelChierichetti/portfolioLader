@@ -38,3 +38,14 @@
     margin: 0px 5px;
     border-radius: 10px;
 }
+
+.container-vacio {
+    margin: 60px;
+    text-align: center;
+}
+
+.container-vacio h3 {
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #b7f200;
+}
