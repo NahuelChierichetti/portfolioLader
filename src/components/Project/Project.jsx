@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import './Project.css'
 import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
+import { HiArrowTopRightOnSquare } from "react-icons/hi2";
 
 const variants = {
   inicial: {
@@ -18,7 +19,7 @@ const variants = {
   })
 }
 
-const Project = ({ id, nombre, imagen, index }) => {
+const Project = ({ id, nombre, imagen, servicio, index }) => {
     const divStyle = {
       backgroundImage: `url(${imagen})`,
       backgroundSize: 'cover',
@@ -41,8 +42,9 @@ const Project = ({ id, nombre, imagen, index }) => {
         className='card-proyecto' 
         style={divStyle}
       >
+        <Link to={`/project/${id}`} className='link-proyecto'><span className='ver-proyecto'>Ver Proyecto</span></Link>
+        <p className='tag-proyecto'>{servicio.join(' | ')}</p>
         <p className='title-proyecto'>{nombre}</p>
-        <Link to={`/project/${id}`} className='link-proyecto'>Ver proyecto</Link>
       </motion.div>
     );
 };

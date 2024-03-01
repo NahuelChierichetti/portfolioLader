@@ -6,17 +6,18 @@ const NavBar = () => {
   return (
     <div className="container-fluid mx-auto navbar-container">
         <header className="top-0 z-50 container mx-auto">
-            <nav className="flex items-center justify-between p-4 lg:px-8 bg-transparent">
+            <nav className="flex items-center justify-between p-4 lg:px-8 bg-transparent navBar-menu">
                 <div className="flex items-center">
-                    <a href="#" aria-label="Homepage">
-                        <img src={LogoLader} alt="Agencia Lader" className='w-[150px] h-[60px]'/>
-                    </a>
+                    <Link to={'/'} aria-label="Homepage" className='logo-img'>
+                        <img src={LogoLader} alt="Agencia Lader" className='w-[170px] h-[62px]'/>
+                    </Link>
                 </div>
                 <div className='flex items-center lg:flex-3'>
                     <ul className='flex space-x-12'> 
-                        <li className='uppercase'><a href="#proyectos" smooth={true} duration={1000}>Proyectos</a></li>
-                        <li className='uppercase'>Clientes</li>
-                        <li className='uppercase'>Contacto</li>
+                        <li className='uppercase link-menu'><Link to={'/categoria/DesarrolloWeb'}>Desarrollo Web</Link></li>
+                        <li className='uppercase link-menu'><Link to={'/categoria/DiseñoUXUI'}>Diseño UX/UI</Link></li>
+                        <li className='uppercase link-menu'><Link to={'/categoria/DiseñoGrafico'}>Diseño Gráfico</Link></li>
+                        <li className='uppercase link-menu'><Link to={'/categoria/RedesSociales'}>Redes Sociales</Link></li>
                     </ul>
                 </div>
                 <div className="flex">

@@ -1,6 +1,5 @@
 .container-proyectos {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     min-height: 100vh;
     flex-wrap: wrap;

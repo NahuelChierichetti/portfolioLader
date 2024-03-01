@@ -5,3 +5,16 @@
     pointer-events: auto;
     z-index: 1;
 }
+.navBar-menu{
+    padding: 0px 32px !important;
+}
+a.logo-img {
+    padding: 10px;
+}
+.link-menu{
+    font-family: "Poppins", Sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 18px;
+}

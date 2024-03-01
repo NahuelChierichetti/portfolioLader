@@ -1,22 +1,23 @@
+import React from 'react';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import Home from './components/Home/Home';
-import ProjectDetailContainer from './components/ProjectDetailContainer/ProjectDetailContainer'; // Importa el componente ProjectDetailContainer
-import ProjectListContainer from './components/ProjectListContainer/ProjectListContainer'; // Importa el componente ProjectListContainer
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ProjectDetailContainer from './components/ProjectDetailContainer/ProjectDetailContainer';
+import ProjectListContainer from './components/ProjectListContainer/ProjectListContainer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
+    <Router>
+      <div className="App">
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<ProjectListContainer />} /> {/* Agrega la ruta para la lista de proyectos */}
-          <Route path="/project/:id" element={<ProjectDetailContainer />} /> {/* Agrega la ruta para el detalle del proyecto */}
+          <Route path="/categoria/:categoryId" element={<ProjectListContainer />} />
+          <Route path="/project/:id" element={<ProjectDetailContainer />} />
         </Routes>
-      </BrowserRouter>
-    </>
+      </div>
+    </Router>
   );
 }
 
