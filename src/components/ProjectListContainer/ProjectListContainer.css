@@ -4,7 +4,7 @@
 
 .title-proyectos h2 {
     font-size: 4.5em;
-    margin-top: 100px;
+    margin-top: 80px;
     font-weight: 700;
 }
 
@@ -22,7 +22,6 @@
 .heading-proyectos {
     width: 30%;
 }
-
 
 .container-buttons {
     display: flex;
@@ -49,3 +48,25 @@
     font-weight: 300;
     color: #b7f200;
 }
+
+.loader-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+
+.loader-icon {
+    font-size: 2em;
+    animation: spin 1s linear infinite; /* Agrega la animación de giro */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+

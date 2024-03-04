@@ -1,6 +1,7 @@
 .container-proyectos {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     min-height: 100vh;
     flex-wrap: wrap;
+    padding-left: 60px;
 }

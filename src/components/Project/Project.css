@@ -1,7 +1,7 @@
 .card-proyecto {
     height: 350px;
     width: 450px;
-    margin: 10px;
+    margin: 20px 10px;
     border-radius: 20px;
     position: relative;
     overflow: hidden;
@@ -25,7 +25,7 @@
 
   .card-proyecto .tag-proyecto {
     position: absolute;
-    bottom: 70px;
+    bottom: 55px;
     left: 30px;
     color: #fff;
     opacity: 0;
@@ -39,10 +39,30 @@
   .card-proyecto:hover .tag-proyecto {
     opacity: 1;
   }
+
+  .card-proyecto .tipo-proyecto {
+    position: absolute;
+    bottom: 80px;
+    left: 30px;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: .8em;
+    border-radius: 4px;
+    background: rgb(94, 23, 234);
+    background: linear-gradient(90deg, rgba(94, 23, 234, 1) 0%, rgba(225, 53, 157, 1) 100%);
+    padding: 3px 5px;
+}
+  
+  .card-proyecto:hover .tipo-proyecto {
+    opacity: 1;
+  }
   
   .card-proyecto .title-proyecto {
     position: absolute;
-    bottom: 30px;
+    bottom: 20px;
     left: 30px;
     color: white;
     opacity: 0;
@@ -88,7 +108,5 @@ span.ver-proyecto:hover {
   background: linear-gradient(90deg, rgba(94,23,234,1) 0%, rgba(225,53,157,1) 100%);
   color: #fff;
   font-weight: 500;
-  border: 1px solid #000;
-  border-radius: 10px;
   transition: .3s ease-in-out;
 }

@@ -5,13 +5,16 @@ import ProjectList from '../ProjectList/ProjectList';
 import './ProjectListContainer.css'
 import { motion, useInView } from 'framer-motion'
 import { useParams } from 'react-router-dom';
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const ProjectListContainer = () => {
     const [data, setData] = useState([]);
     const [selectedService, setSelectedService] = useState(null);
     const { categoryId } = useParams()
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
+        setLoading(true)
         const getData = async () => {
             let queryRef;
             if (!categoryId) {
@@ -29,8 +32,11 @@ const ProjectListContainer = () => {
                 };
                 return newProject;
             });
-            
-            setData(projects);
+
+            setTimeout(() => {
+                setData(projects)
+                setLoading(false)
+              }, 1000)
         };
         getData();
     }, [categoryId]);
@@ -66,45 +72,53 @@ const ProjectListContainer = () => {
     })
 
     return (
-        <div id="proyectos">
-                <div className='title-proyectos'>
-                    <motion.h2
-                        ref={ref}
-                        initial = {{
-                            opacity: 0,
-                        }}
-                        animate = {{
-                            opacity: 1,
-                            transition: {
-                                duration: 1.5,
-                                delay: .5
-                            }
-                        }}
-                    >
-                        Proyectos realizados
-                    </motion.h2>
-                </div>
-                
-            {data.length === 0 ? (
-                <div className='container-vacio'>
-                    <motion.h3
-                        ref={ref}
-                        initial = {{
-                            opacity: 0,
-                        }}
-                        animate = {{
-                            opacity: 1n,
-                            transition: {
-                                duration: 1.5,
-                                delay: .5
-                            }
-                        }}
-                    >No hay proyectos de este servicio</motion.h3>
-                </div>
+        <>
+            {!loading ? (
+            <div id="proyectos">
+                    <div className='title-proyectos'>
+                        <motion.h2
+                            ref={ref}
+                            initial = {{
+                                opacity: 0,
+                            }}
+                            animate = {{
+                                opacity: 1,
+                                transition: {
+                                    duration: 1.5,
+                                    delay: .5
+                                }
+                            }}
+                        >
+                            Proyectos realizados
+                        </motion.h2>
+                    </div>
+                    
+                {data.length === 0 ? (
+                    <div className='container-vacio'>
+                        <motion.h3
+                            ref={ref}
+                            initial = {{
+                                opacity: 0,
+                            }}
+                            animate = {{
+                                opacity: 1,
+                                transition: {
+                                    duration: 1.5,
+                                    delay: .5
+                                }
+                            }}
+                        >No hay proyectos de este servicio</motion.h3>
+                    </div>
+                ) : (
+                    <ProjectList data={data} />
+                )}
+            </div>
             ) : (
-                <ProjectList data={data} />
+                <div className='loader-container'>
+                    <AiOutlineLoading3Quarters className='loader-icon'/>
+                </div>
             )}
-        </div>
+        </>
     );
 }
 

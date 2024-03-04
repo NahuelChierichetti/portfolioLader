@@ -18,3 +18,45 @@ a.logo-img {
     text-transform: uppercase;
     line-height: 18px;
 }
+
+.flex {
+    display: flex;
+    /* Agrega cualquier estilo adicional que necesites para tu contenedor flex */
+  }
+  
+  .link-menu {
+    list-style: none;
+    margin-right: 20px;
+  }
+  
+  .link-menu > a {
+    text-decoration: none;
+    position: relative;
+    font-family: "Poppins", Sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 18px;
+    color: #fff;
+    padding-bottom: 8px;
+  }
+  
+  .link-menu > a:hover {
+    color: #fff;
+  }
+  
+  .link-menu > a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #b7f200;
+    transition: width 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  .link-menu > a:hover::before {
+    width: 100%;
+  }

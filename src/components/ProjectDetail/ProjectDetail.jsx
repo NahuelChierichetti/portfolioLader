@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './ProjectDetail.css';
 import { motion, useInView } from 'framer-motion';
 
-const ProjectDetail = ({ imagen, nombre, servicio, fechaFinalizacion, descripcion, imagenes }) => {
+const ProjectDetail = ({ imagen, nombre, servicio, fechaFinalizacion, descripcion, imagenes, link, tipoProyecto }) => {
     
     const variants = {
         inicial: {
@@ -82,18 +82,18 @@ const ProjectDetail = ({ imagen, nombre, servicio, fechaFinalizacion, descripcio
                     <p className='title-serv'>Servicios</p>
                     <p className='subtitle-serv'>
                         {Array.isArray(servicio) ? servicio.map((item, index) => (
-                            // Agrega una coma y un espacio solo si no es el último elemento
                             index !== servicio.length - 1 ? `${item}, ` : item
                         )) : servicio}
                     </p>
                     <p className='title-serv'>Cliente</p>
                     <p className='subtitle-serv'>{nombre}</p>
+                    {tipoProyecto ? <p className='title-serv'>Tipo de Proyecto</p> : ''}
+                    {tipoProyecto ? <p className='subtitle-serv'>{tipoProyecto}</p> : ''}
                     <p className='title-serv'>Fecha de finalización</p>
                     <p className='subtitle-serv'>{fechaFinalizacion}</p>
                 </motion.div>
             </div>
             <div className='container-detail-images'>
-                {/* Aplica la animación de scroll reveal utilizando Framer Motion */}
                 <motion.div
                     ref={ref}
                     initial="inicial"
@@ -106,13 +106,22 @@ const ProjectDetail = ({ imagen, nombre, servicio, fechaFinalizacion, descripcio
                             <img src={imagenItem} key={index} alt="" />
                         ))
                     ) : (
-                        <p>No hay imágenes disponibles</p>
+                       ''
                     )}
                 </motion.div>
             </div>
-            <div className='container-return-proyectos'>
-                <Link to="/">Volver atrás</Link>
-            </div>
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ 
+                    opacity: 1,
+                    transition: {
+                        duration: 5
+                    }
+                }}
+                className='container-return-proyectos'>
+                <Link to="/" className='link-return'>Volver atrás</Link>
+                <Link to={link} target='_blank' className='link-web'>Visitar web</Link>
+            </motion.div>
         </div>
     );
 }

@@ -14,12 +14,12 @@ const variants = {
     scale: 1,
     transition: {
       duration: 1,
-      delay: index*.1
+      delay: index*.3
     }
   })
 }
 
-const Project = ({ id, nombre, imagen, servicio, index }) => {
+const Project = ({ id, nombre, imagen, servicio, index, tipoProyecto }) => {
     const divStyle = {
       backgroundImage: `url(${imagen})`,
       backgroundSize: 'cover',
@@ -44,6 +44,7 @@ const Project = ({ id, nombre, imagen, servicio, index }) => {
       >
         <Link to={`/project/${id}`} className='link-proyecto'><span className='ver-proyecto'>Ver Proyecto</span></Link>
         <p className='tag-proyecto'>{servicio.join(' | ')}</p>
+        {tipoProyecto ? <p className='tipo-proyecto'>{tipoProyecto}</p> : ''}
         <p className='title-proyecto'>{nombre}</p>
       </motion.div>
     );
