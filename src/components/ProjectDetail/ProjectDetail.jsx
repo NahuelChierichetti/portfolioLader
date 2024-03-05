@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './ProjectDetail.css';
 import { motion, useInView } from 'framer-motion';
 
-const ProjectDetail = ({ imagen, nombre, servicio, fechaFinalizacion, descripcion, imagenes, link, tipoProyecto }) => {
+const ProjectDetail = ({ imagen, nombre, servicio, fechaFinalizacion, descripcion, imagenes, link, tipoProyecto, cliente }) => {
     
     const variants = {
         inicial: {
@@ -86,7 +86,7 @@ const ProjectDetail = ({ imagen, nombre, servicio, fechaFinalizacion, descripcio
                         )) : servicio}
                     </p>
                     <p className='title-serv'>Cliente</p>
-                    <p className='subtitle-serv'>{nombre}</p>
+                    <p className='subtitle-serv'>{cliente}</p>
                     {tipoProyecto ? <p className='title-serv'>Tipo de Proyecto</p> : ''}
                     {tipoProyecto ? <p className='subtitle-serv'>{tipoProyecto}</p> : ''}
                     <p className='title-serv'>Fecha de finalización</p>

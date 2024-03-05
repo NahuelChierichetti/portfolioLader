@@ -6,6 +6,7 @@ import './index.css';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { getStorage } from 'firebase/storage';
 import { proyectos } from './data/asyncMock.jsx';
 
 const firebaseConfig = {
@@ -22,6 +23,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 const analytics = getAnalytics(app);
+export const storage = getStorage(app);
 
 // Move the forEach loop here
 //proyectos.forEach((proyecto) => {
