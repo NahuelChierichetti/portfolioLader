@@ -1,0 +1,57 @@
+.title-proyectos h2 {
+    font-size: 3em;
+    margin-top: 0px;
+    font-weight: 700;
+}
+.btnAdd a {
+    margin: 60px;
+    border: 1px solid;
+    padding: 15px 30px;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.btnAdd a:hover {
+    background: rgb(94,23,234);
+    background: linear-gradient(90deg, rgba(94,23,234,1) 0%, rgba(225,53,157,1) 100%);
+    color: #fff;
+    border-color: #fff;
+    transition: .3s ease-in-out;
+}
+
+th {
+    font-weight: 600;
+    color: rgb(94, 23, 234) !important;
+    font-size: 17px;
+}
+
+td {
+    font-weight: 300;
+}
+
+span.etiqueta-servicio {
+    background: #e1359d;
+    margin-right: 5px !important;
+    color: #fff;
+    font-size: 14px;
+    padding: 4px 8px;
+    border-radius: 10px;
+}
+
+
+.text-end {
+    display: flex;
+    justify-content: end;
+}
+button.btn.btnDelete {
+    color: rgb(219, 27, 27);
+    font-size: 20px;
+    transition: .3s;
+}
+
+button.btn.btnDelete:hover {
+    color: rgb(215, 88, 88);
+    transition: .3s;
+}

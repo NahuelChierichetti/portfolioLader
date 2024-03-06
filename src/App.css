@@ -6,6 +6,10 @@ body{
   color: #ededed;
 }
 
+div#root {
+  overflow-x: hidden !important;
+}
+
 .light{
   font-weight: 300;
 }

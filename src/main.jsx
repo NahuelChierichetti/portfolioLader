@@ -10,13 +10,13 @@ import { getStorage } from 'firebase/storage';
 import { proyectos } from './data/asyncMock.jsx';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBvuq6GSNBP_wnr6rKWCAX-y-REGDLF6TE",
-  authDomain: "portfoliolader.firebaseapp.com",
-  projectId: "portfoliolader",
-  storageBucket: "portfoliolader.appspot.com",
-  messagingSenderId: "35275029820",
-  appId: "1:35275029820:web:b60a918b4dc9519ba5f239",
-  measurementId: "G-C5RYQYYFKN"
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
+  measurementId: import.meta.env.VITE_MEASUREMENT_ID
 };
 
 // Initialize Firebase

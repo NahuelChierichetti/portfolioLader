@@ -62,6 +62,7 @@ const Admin = () => {
         try {
             await addDoc(collection(db, 'proyectos'), newProyecto);
             e.target.reset();
+            window.location.href = '/panel';
         } catch (error) {
             console.log('Error al guardar el proyecto:', error);
         }

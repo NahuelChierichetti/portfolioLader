@@ -45,12 +45,13 @@ p.title-serv {
 .container-return-proyectos {
     margin: auto;
     text-align: center;
-    width: 25%;
+    max-width: 30% !important;
     padding: 25px 0px;
     border-radius: 10px;
     background: #0f172a;
     position: sticky;
     bottom: 20px;
+    min-width: 30% !important;
 }
 .container-return-proyectos a {
     border: 1px solid;
@@ -79,4 +80,31 @@ a.link-return:hover {
     border-color: #fff;
     color: #fff;
     transition: .3s;
+}
+
+@media screen and (max-width: 768px){
+    .container-detail-heading {
+        display: flex;
+        flex-direction: column;
+    }
+    .container-detail {
+        margin: 40px 20px;
+    }
+    .detail-title {
+        width: 100%;
+    }
+    .detail-datos {
+        width: 100%;
+    }
+    .container-detail-images img {
+        margin-bottom: 30px;
+    }
+    .container-detail-images img {
+        height: 400px;
+        object-fit: cover;
+    }
+    .container-return-proyectos {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
 }
