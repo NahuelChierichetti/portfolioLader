@@ -11,6 +11,7 @@ const Admin = () => {
     const [categoriasSeleccionadas, setCategoriasSeleccionadas] = useState([]);
     const [serviciosSeleccionados, setServiciosSeleccionados] = useState([]);
     const [urlImagen, setUrlImagen] = useState('');
+    const [urlImagenes, setUrlImagenes] = useState([])
 
     const handleCategoriaChange = (event) => {
         const categoriaSeleccionada = event.target.value;
@@ -54,7 +55,8 @@ const Admin = () => {
             tipoProyecto: tipoProyecto,
             categoria: categoriasSeleccionadas || [],
             servicio: serviciosSeleccionados || [],
-            imagen: urlImagen
+            imagen: urlImagen,
+            imagenes: urlImagenes || []
         };
     
         try {
@@ -77,6 +79,27 @@ const Admin = () => {
         } catch (error) {
             console.error('Error al subir el archivo:', error);
         }
+    };
+
+    const filesHandler = async (e) => {
+        const archivos = e.target.files; // Acceder a e.target.files
+        const urls = [];
+    
+        // Iterar sobre cada archivo
+        for (let i = 0; i < archivos.length; i++) {
+            const archivo = archivos[i];
+            const refArchivo = ref(storage, `documentos/${archivo.name}`);
+    
+            try {
+                await uploadBytes(refArchivo, archivo);
+                const urlImagen = await getDownloadURL(refArchivo);
+                urls.push(urlImagen);
+            } catch (error) {
+                console.error('Error al subir los archivos:', error);
+            }
+        }
+    
+        setUrlImagenes(urls); // Establecer todas las URLs de imágenes
     };
     
     return (
@@ -131,8 +154,12 @@ const Admin = () => {
                                 ))}
                             </div>
                             <div className="form-group">
-                                <label className="labelForm">Imagen principal</label>
+                                <label className="labelForm">Imágen principal</label>
                                 <input type="file" id="imagen" placeholder='Imagen del proyecto' className='form-control' onChange={fileHandler} />
+                            </div>
+                            <div className="form-group">
+                                <label className="labelForm">Imágenes del proyecto</label>
+                                <input type="file" id="imagenes" placeholder='Imágenes del proyecto' className='form-control' multiple onChange={filesHandler} />
                             </div>
                             <div className="form-group">
                                 <label className="labelForm">Link del sitio web (opcional)</label>

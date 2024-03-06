@@ -60,7 +60,6 @@ label.labelForm {
     margin-bottom: 10px;
     font-weight: 600;
     color: #fff;
-    text-decoration: underline;
 }
 input, textarea {
     background: transparent;
