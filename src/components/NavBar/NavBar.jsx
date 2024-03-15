@@ -56,9 +56,6 @@ const NavBar = () => {
               <li className="uppercase link-menu">
                 <Link to={'/categoria/RedesSociales'}>Redes Sociales</Link>
               </li>
-              <li className="uppercase link-menu">
-                <Link to={'/panel'}>Panel</Link>
-              </li>
             </ul>
           </div>
           <div className="hidden lg:flex">
