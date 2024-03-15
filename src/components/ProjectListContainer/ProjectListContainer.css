@@ -70,3 +70,11 @@
     }
 }
 
+@media screen and (max-width: 768px){
+    .title-proyectos {
+        margin: 20px;
+    }
+    .title-proyectos h2{
+        margin-top: 40px;
+    }
+}

@@ -43,15 +43,16 @@ p.title-serv {
     margin-bottom: 80px;
 }
 .container-return-proyectos {
-    margin: auto;
+    position: fixed; /* Cambia a position: fixed */
+    bottom: 10px;
+    left: 50%; /* Alinea al centro horizontalmente */
+    transform: translateX(-50%); /* Centra horizontalmente */
     text-align: center;
-    max-width: 30% !important;
     padding: 25px 0px;
     border-radius: 10px;
     background: #0f172a;
-    position: sticky;
-    bottom: 20px;
-    min-width: 30% !important;
+    width: 50%; /* Ajusta el ancho */
+    max-width: 400px; /* Agrega un ancho máximo */
 }
 .container-return-proyectos a {
     border: 1px solid;
@@ -82,6 +83,8 @@ a.link-return:hover {
     transition: .3s;
 }
 
+
+
 @media screen and (max-width: 768px){
     .container-detail-heading {
         display: flex;
@@ -106,5 +109,6 @@ a.link-return:hover {
     .container-return-proyectos {
         width: 100% !important;
         max-width: 100% !important;
+        bottom: 0px;
     }
 }

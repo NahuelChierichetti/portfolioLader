@@ -85,8 +85,6 @@ const ProjectDetail = ({ imagen, nombre, servicio, fechaFinalizacion, descripcio
                             index !== servicio.length - 1 ? `${item}, ` : item
                         )) : servicio}
                     </p>
-                    <p className='title-serv'>Cliente</p>
-                    <p className='subtitle-serv'>{cliente}</p>
                     {tipoProyecto ? <p className='title-serv'>Tipo de Proyecto</p> : ''}
                     {tipoProyecto ? <p className='subtitle-serv'>{tipoProyecto}</p> : ''}
                     <p className='title-serv'>Fecha de finalización</p>

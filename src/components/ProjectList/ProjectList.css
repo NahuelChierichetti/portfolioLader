@@ -7,7 +7,12 @@
 }
 
 @media screen and (max-width: 768px){
-    .container-proyectos{
-        padding: 0px 20px !important;
+    .container-proyectos {
+        display: flex;
+        justify-content: flex-start;
+        min-height: 100vh;
+        flex-wrap: wrap;
+        padding-right: 30px !important;
+        padding-left: 10px !important;
     }
 }

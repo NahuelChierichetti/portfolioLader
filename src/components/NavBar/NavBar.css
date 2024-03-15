@@ -81,7 +81,7 @@ a.logo-img {
   }
   button.text-bgBlanco {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     font-size: 22px;
   }
   .content-menu {
