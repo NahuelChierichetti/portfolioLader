@@ -36,7 +36,7 @@ const Panel = () => {
         <div>
             <div className="container">
                 <div className="row">
-                    <div className="col-6">
+                    <div className="col-md-6 col-12">
                         <div className='title-proyectos'>
                             <motion.h2
                                 initial = {{
@@ -54,46 +54,48 @@ const Panel = () => {
                             </motion.h2>
                         </div>
                     </div>
-                    <div className="col-6 text-end btnAdd">
+                    <div className="col-12 col-md-6 text-end btnAdd">
                         <Link to='/admin'>Crear proyecto</Link>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-11 mx-auto">
-                        <table className="table table-hover table-secondary">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Proyecto</th>
-                                    <th scope="col">Cliente</th>
-                                    <th scope="col">Servicio</th>
-                                    <th scope="col">Fecha de Finalización</th>
-                                    <th scope="col">Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {proyectos.map((proyecto, index) => (
-                                    <tr key={index}>
-                                        <th scope="row">{index + 1}</th>
-                                        <td>{proyecto.nombre}</td>
-                                        <td>{proyecto.cliente}</td>
-                                        <td>
-                                            {Array.isArray(proyecto.servicio) ? (
-                                                proyecto.servicio.map((servicio, index) => (
-                                                    <span key={index} className="etiqueta-servicio">{index !== 0 ? ' ' : ''}{servicio}</span>
-                                                ))
-                                            ) : (
-                                                proyecto.servicio
-                                            )}
-                                        </td>
-                                        <td>{proyecto.fechaFinalizacion}</td>
-                                        <td>
-                                            <button className="btn btnDelete" onClick={() => handleDelete(proyecto.id)}><HiOutlineTrash /></button>
-                                        </td>
+                        <div className="table-responsive">
+                            <table className="table table-hover table-secondary">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Proyecto</th>
+                                        <th scope="col">Cliente</th>
+                                        <th scope="col">Servicio</th>
+                                        <th scope="col">Fecha de Finalización</th>
+                                        <th scope="col">Acciones</th>
                                     </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    {proyectos.map((proyecto, index) => (
+                                        <tr key={index}>
+                                            <th scope="row">{index + 1}</th>
+                                            <td style={{ minWidth: '150px' }}>{proyecto.nombre}</td>
+                                            <td style={{ minWidth: '150px' }}>{proyecto.cliente}</td>
+                                            <td style={{ minWidth: '300px' }}>
+                                                {Array.isArray(proyecto.servicio) ? (
+                                                    proyecto.servicio.map((servicio, index) => (
+                                                        <span key={index} className="etiqueta-servicio">{index !== 0 ? ' ' : ''}{servicio}</span>
+                                                    ))
+                                                ) : (
+                                                    proyecto.servicio
+                                                )}
+                                            </td>
+                                            <td style={{ minWidth: '150px' }}>{proyecto.fechaFinalizacion}</td>
+                                            <td style={{ minWidth: '100px' }}>
+                                                <button className="btn btnDelete" onClick={() => handleDelete(proyecto.id)}><HiOutlineTrash /></button>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

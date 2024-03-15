@@ -50,7 +50,7 @@ h3.add-title {
     font-size: 4.5em;
     margin: 40px 0px;
     margin-left: 60px;
-    text-transform: uppercase;
+    text-transform: initial;
     font-weight: 700;
     color: #fff;
 }
@@ -84,4 +84,17 @@ input, textarea {
     font-weight: 500;
     transition: .3s ease-in-out;
     border-color: #fff;
+}
+
+@media screen and (max-width: 768px){
+    h3.add-title{
+      font-size: 3em;
+      margin: 20px;
+      text-transform: initial;
+    }
+    form.formulario-create {
+      margin: 20px;
+      width: 90%;
+      padding: 10px 20px;
+    }
 }
