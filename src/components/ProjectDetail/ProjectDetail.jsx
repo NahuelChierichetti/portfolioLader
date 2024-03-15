@@ -8,12 +8,10 @@ const ProjectDetail = ({ imagen, nombre, servicio, fechaFinalizacion, descripcio
     const variants = {
         inicial: {
             opacity: 0,
-            y: 100,
             scale: .5
         },
         animate: () => ({
             opacity: 1,
-            y: 0,
             scale: 1,
             transition: {
                 duration: 1.5,
@@ -95,7 +93,7 @@ const ProjectDetail = ({ imagen, nombre, servicio, fechaFinalizacion, descripcio
                 <motion.div
                     ref={ref}
                     initial="inicial"
-                    animate={enVista ? "animate" : ""}
+                    animate="animate"
                     variants={variants}
                 >
                     <img src={imagen} alt={nombre} />
