@@ -115,4 +115,7 @@ span.ver-proyecto:hover {
   .card-proyecto::before{
     background-color: rgba(0, 0, 0, 0.0);
   }
+  span.ver-proyecto{
+    z-index: 999999 !important;
+  }
 }
