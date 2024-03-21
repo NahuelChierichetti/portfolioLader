@@ -23,6 +23,29 @@
     width: 30%;
 }
 
+.tipo-proyecto-desarrollo .submenu {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 60px;
+}
+
+ul.submenu li a {
+    border: 1px solid;
+    padding: 10px 20px;
+    margin: 0px 10px;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+ul.submenu li a:hover{
+    background: linear-gradient(90deg, rgba(94, 23, 234, 1) 0%, rgba(225, 53, 157, 1) 100%);
+    color: #fff !important;
+    border-color: #fff !important;
+    transition: .3s;
+}
+
 .container-buttons {
     display: flex;
     justify-content: center;
@@ -76,5 +99,16 @@
     }
     .title-proyectos h2{
         margin-top: 40px;
+    }
+    .tipo-proyecto-desarrollo .submenu {
+        margin-left: 20px;
+        margin-right: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 0px;
+        margin-top: 40px;
+    }
+    .tipo-proyecto-desarrollo .submenu li {
+        margin-bottom: 40px;
     }
 }

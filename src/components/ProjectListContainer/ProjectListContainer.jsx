@@ -1,26 +1,33 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { useParams, useLocation } from 'react-router-dom';
 import { db } from '../../main';
 import { collection, where, query, getDocs } from 'firebase/firestore';
 import ProjectList from '../ProjectList/ProjectList';
-import './ProjectListContainer.css'
-import { motion, useInView } from 'framer-motion'
-import { useParams } from 'react-router-dom';
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import './ProjectListContainer.css';
 
 const ProjectListContainer = () => {
     const [data, setData] = useState([]);
-    const [selectedService, setSelectedService] = useState(null);
-    const { categoryId } = useParams()
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
+    const { categoryId } = useParams();
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const type = queryParams.get('type');
 
     useEffect(() => {
-        setLoading(true)
+        setLoading(true);
         const getData = async () => {
             let queryRef;
             if (!categoryId) {
                 queryRef = collection(db, 'proyectos');
             } else {
-                queryRef = query(collection(db, 'proyectos'), where('categoria', 'array-contains-any', [categoryId]));
+                if (type) {
+                    queryRef = query(collection(db, 'proyectos'), where('categoria', 'array-contains-any', [categoryId]), where('tipoProyecto', '==', type));
+                } else {
+                    queryRef = query(collection(db, 'proyectos'), where('categoria', 'array-contains-any', [categoryId]));
+                }
             }
             
             const response = await getDocs(queryRef);
@@ -32,87 +39,56 @@ const ProjectListContainer = () => {
                 };
                 return newProject;
             });
-
-            setTimeout(() => {
-                setData(projects)
-                setLoading(false)
-              }, 1000)
+            
+            setData(projects);
+            setLoading(false);
         };
         getData();
-    }, [categoryId]);
+    }, [categoryId, type]);
 
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         try {
-    //             let queryRef = collection(db, 'proyectos');
-    //             if (selectedService) {
-    //                 queryRef = query(collection(db, 'proyectos'), where('servicio', 'array-contains', selectedService));
-    //             }
-
-    //             const querySnapshot = await getDocs(queryRef);
-    //             const projects = querySnapshot.docs.map(doc => ({
-    //                 ...doc.data(),
-    //                 id: doc.id
-    //             }));
-    //             setData(projects);
-    //         } catch (error) {
-    //             console.error("Error fetching documents: ", error);
-    //         }
-    //     };
-    //     fetchData();
-    // }, [selectedService]);
-
-    // const handleServiceClick = (service) => {
-    //     setSelectedService(service);
-    // };
-
-    const ref = useRef(null)
-    const enVista = useInView(ref, {
-        once: true
-    })
+    // Condicional para mostrar el elemento solo en la URL /categoria/DesarrolloWeb
+    const isDesarrolloWeb = location.pathname === '/categoria/DesarrolloWeb';
 
     return (
         <>
             {!loading ? (
-            <div id="proyectos">
+                <div id="proyectos">
                     <div className='title-proyectos'>
                         <motion.h2
-                            ref={ref}
-                            initial = {{
-                                opacity: 0,
-                            }}
-                            animate = {{
-                                opacity: 1,
-                                transition: {
-                                    duration: 1.5,
-                                    delay: .5
-                                }
-                            }}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1, transition: { duration: 1.5, delay: .5 } }}
                         >
                             Proyectos realizados
                         </motion.h2>
                     </div>
-                    
-                {data.length === 0 ? (
-                    <div className='container-vacio'>
-                        <motion.h3
-                            ref={ref}
-                            initial = {{
-                                opacity: 0,
-                            }}
-                            animate = {{
-                                opacity: 1,
-                                transition: {
-                                    duration: 1.5,
-                                    delay: .5
-                                }
-                            }}
-                        >No hay proyectos de este servicio</motion.h3>
-                    </div>
-                ) : (
-                    <ProjectList data={data} />
-                )}
-            </div>
+                    {isDesarrolloWeb && (
+                        <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1, transition: { duration: 1.5, delay: .5 } }}
+                        className='tipo-proyecto-desarrollo'
+                        >
+                            <ul className="submenu">
+                                <li><Link to={'/categoria/DesarrolloWeb'}>Todos</Link></li>
+                                <li><Link to={'/categoria/DesarrolloWeb?type=Web Institucional'}>Web Institucional</Link></li>
+                                <li><Link to={'/categoria/DesarrolloWeb?type=Ecommerce'}>E-commerce</Link></li>
+                                <li><Link to={'/categoria/DesarrolloWeb?type=E-learning'}>E-learning</Link></li>
+                            </ul>
+                        </motion.div>
+                    )}
+
+                    {data.length === 0 ? (
+                        <div className='container-vacio'>
+                            <motion.h3
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1, transition: { duration: 1.5, delay: .5 } }}
+                            >
+                                No hay proyectos de este servicio
+                            </motion.h3>
+                        </div>
+                    ) : (
+                        <ProjectList data={data} />
+                    )}
+                </div>
             ) : (
                 <div className='loader-container'>
                     <AiOutlineLoading3Quarters className='loader-icon'/>
