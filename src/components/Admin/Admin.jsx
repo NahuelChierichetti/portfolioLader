@@ -39,7 +39,7 @@ const Admin = () => {
 
     const guardarInfo = async (e) => {
         e.preventDefault();
-        const cliente = e.target.cliente.value;
+        //const cliente = e.target.cliente.value;
         const nombre = e.target.nombre.value;
         const descripcion = e.target.descripcion.value;
         const fechaFinalizacion = e.target.fechaFinalizacion.value;
@@ -47,7 +47,7 @@ const Admin = () => {
         const tipoProyecto = e.target.tipoProyecto.value;
     
         const newProyecto = {
-            cliente: cliente,
+            //cliente: cliente,
             nombre: nombre,
             descripcion: descripcion,
             fechaFinalizacion: fechaFinalizacion,
@@ -110,17 +110,17 @@ const Admin = () => {
                 <h3 className='add-title'>Agregar Proyecto</h3>
                     <div className="contenedor-form">
                         <form onSubmit={guardarInfo} className='formulario-create'>
-                            <div className="form-group">
+                            {/* <div className="form-group">
                                 <label className="labelForm" htmlFor="cliente">Cliente</label>
                                 <input type="text" id="cliente" name="cliente" placeholder="Nombre del cliente" />
-                            </div>
+                            </div> */}
                             <div className="form-group">
                                 <label className="labelForm" htmlFor="nombre">Nombre</label>
                                 <input type="text" id="nombre" name="nombre" placeholder="Nombre del proyecto" />
                             </div>
                             <div className="form-group">
                                 <label className="labelForm">Fecha de finalización</label>
-                                <input type="text" id="fechaFinalizacion" name="fechaFinalizacion" placeholder="Fecha de finalización del proyecto" />
+                                <input type="text" id="fechaFinalizacion" name="fechaFinalizacion" placeholder="Marzo 2024" />
                             </div>
                             <div className="form-group">
                                 <label className="labelForm">Descripción</label>
@@ -168,7 +168,7 @@ const Admin = () => {
                             </div>
                             <div className="form-group">
                                 <label className="labelForm">Tipo de proyecto (opcional)</label>
-                                <input type="text" id="tipoProyecto" name="tipoProyecto" placeholder="Web Institucional | Ecommerce | E-leanding" />
+                                <input type="text" id="tipoProyecto" name="tipoProyecto" placeholder="Web Institucional | Ecommerce | E-learning" />
                             </div>
                             <button className='btn btn-primary mt-3 form-control btnEnviar' type="submit">Guardar</button>
                         </form>

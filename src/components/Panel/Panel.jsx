@@ -66,7 +66,6 @@ const Panel = () => {
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Proyecto</th>
-                                        <th scope="col">Cliente</th>
                                         <th scope="col">Servicio</th>
                                         <th scope="col">Fecha de Finalización</th>
                                         <th scope="col">Acciones</th>
@@ -77,7 +76,6 @@ const Panel = () => {
                                         <tr key={index}>
                                             <th scope="row">{index + 1}</th>
                                             <td style={{ minWidth: '150px' }}>{proyecto.nombre}</td>
-                                            <td style={{ minWidth: '150px' }}>{proyecto.cliente}</td>
                                             <td style={{ minWidth: '300px' }}>
                                                 {Array.isArray(proyecto.servicio) ? (
                                                     proyecto.servicio.map((servicio, index) => (

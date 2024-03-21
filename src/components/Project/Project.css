@@ -110,3 +110,9 @@ span.ver-proyecto:hover {
   font-weight: 500;
   transition: .3s ease-in-out;
 }
+
+@media screen and (max-width:768px){
+  .card-proyecto::before{
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
