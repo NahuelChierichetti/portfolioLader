@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { RiMenu3Line } from 'react-icons/ri';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MdClose } from "react-icons/md";
+import { BsInstagram } from "react-icons/bs";
+import { BsLinkedin } from "react-icons/bs";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -58,10 +60,9 @@ const NavBar = () => {
               </li>
             </ul>
           </div>
-          <div className="hidden lg:flex">
-            <button type="button" className="btn-hablemos bg-transparent hover:bg-verde text-bgBlanco hover:text-bgVioleta py-2 px-6 border-[1px] border-solid border-bgWhite hover:border-bgVioleta rounded-[20px]">
-              Hablemos
-            </button>
+          <div className="hidden lg:flex contenedor-iconos">
+            <Link to="https://www.instagram.com/agencialader/" target='_blank'><BsInstagram className='icono-red'/></Link>
+            <Link to="https://www.linkedin.com/company/agencia-lader/?originalSubdomain=ar" target='_blank'><BsLinkedin className='icono-red' /></Link>
           </div>
           <div className="lg:hidden">
             <RiMenu3Line className="text-3xl text-bgBlanco cursor-pointer" onClick={toggleMenu} />

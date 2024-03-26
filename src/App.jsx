@@ -7,6 +7,7 @@ import ProjectListContainer from './components/ProjectListContainer/ProjectListC
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Admin from './components/Admin/Admin';
 import Panel from './components/Panel/Panel';
+import WhatsAppLink from './components/WhatsAppLink/WhatsAppLink';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/categoria/:categoryId" element={<ProjectListContainer />} />
           <Route path="/project/:id" element={<ProjectDetailContainer />} />
         </Routes>
+        <WhatsAppLink phoneNumber="541124904374" message="Hola! Vi tu portafolio y me gustó, me podrías dar más información?" />
       </div>
     </Router>
   );

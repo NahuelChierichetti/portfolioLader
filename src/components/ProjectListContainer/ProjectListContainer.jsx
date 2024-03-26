@@ -46,7 +46,6 @@ const ProjectListContainer = () => {
         getData();
     }, [categoryId, type]);
 
-    // Condicional para mostrar el elemento solo en la URL /categoria/DesarrolloWeb
     const isDesarrolloWeb = location.pathname === '/categoria/DesarrolloWeb';
 
     return (
@@ -68,10 +67,10 @@ const ProjectListContainer = () => {
                         className='tipo-proyecto-desarrollo'
                         >
                             <ul className="submenu">
-                                <li><Link to={'/categoria/DesarrolloWeb'}>Todos</Link></li>
-                                <li><Link to={'/categoria/DesarrolloWeb?type=Web Institucional'}>Web Institucional</Link></li>
-                                <li><Link to={'/categoria/DesarrolloWeb?type=Ecommerce'}>E-commerce</Link></li>
-                                <li><Link to={'/categoria/DesarrolloWeb?type=E-learning'}>E-learning</Link></li>
+                                <li><Link to={'/categoria/DesarrolloWeb'} className={type === null ? 'active' : ''}>Todos</Link></li>
+                                <li><Link to={'/categoria/DesarrolloWeb?type=Web Institucional'} className={type === 'Web Institucional' ? 'active' : ''}>Web Institucional</Link></li>
+                                <li><Link to={'/categoria/DesarrolloWeb?type=Ecommerce'} className={type === 'Ecommerce' ? 'active' : ''}>E-commerce</Link></li>
+                                <li><Link to={'/categoria/DesarrolloWeb?type=E-learning'} className={type === 'E-learning' ? 'active' : ''}>E-learning</Link></li>
                             </ul>
                         </motion.div>
                     )}

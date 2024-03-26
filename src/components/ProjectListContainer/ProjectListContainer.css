@@ -46,6 +46,13 @@ ul.submenu li a:hover{
     transition: .3s;
 }
 
+.submenu li a.active {
+    background: linear-gradient(90deg, rgba(94, 23, 234, 1) 0%, rgba(225, 53, 157, 1) 100%);
+    color: #fff !important;
+    border-color: #fff !important;
+    transition: .3s;
+}
+
 .container-buttons {
     display: flex;
     justify-content: center;

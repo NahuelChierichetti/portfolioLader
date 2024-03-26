@@ -60,16 +60,17 @@ a.logo-img {
     width: 100%;
   }
 
-  .btn-hablemos{
-    border-radius: 10px !important;
+  .contenedor-iconos {
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    font-size: 20px;
   }
 
-  .btn-hablemos:hover{
-    background: rgb(94,23,234);
-    background: linear-gradient(90deg, rgba(94,23,234,1) 0%, rgba(225,53,157,1) 100%);
-    color: #fff !important;
-    border-color: #fff !important;
+  .icono-red:hover{
+    color: #b7f200;
     transition: .3s;
+    cursor: pointer;
   }
 
 @media screen and (max-width: 768px){
