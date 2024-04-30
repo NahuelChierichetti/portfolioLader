@@ -8,6 +8,7 @@ import { getAnalytics } from "firebase/analytics";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { getStorage } from 'firebase/storage';
 import { proyectos } from './data/asyncMock.jsx';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_API_KEY,
@@ -22,8 +23,8 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
-const analytics = getAnalytics(app);
 export const storage = getStorage(app);
+export const auth = getAuth(app);
 
 // Move the forEach loop here
 //proyectos.forEach((proyecto) => {

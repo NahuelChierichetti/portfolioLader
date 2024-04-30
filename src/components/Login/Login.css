@@ -1,0 +1,42 @@
+.bg-login{
+    background-image: url('./../../assets/img/bg-micuenta.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 88vh;
+}
+
+.padre{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+h3.title-login {
+    font-size: 3em;
+    font-weight: 700;
+}
+
+label.labelForm.label-form {
+    font-size: 16px !important;
+    margin-bottom: 5px !important;
+}
+
+.card.card-body {
+    background: #1E173F;
+    padding: 120px;
+}
+
+.btnSubmit{
+    padding: 15px 20px;
+    color: #fff;
+    font-weight: 500;
+    border: 1px solid #5e17ea !important;
+    border-radius: 10px;
+    background: #5e17ea !important;
+    transition: .3s ease-in-out;
+}
+
+.btnSubmit:hover{
+    background: transparent !important;
+}
