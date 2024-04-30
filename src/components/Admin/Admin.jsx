@@ -85,12 +85,10 @@ const Admin = () => {
     const filesHandler = async (e) => {
         const archivos = e.target.files; // Acceder a e.target.files
         const urls = [];
-    
         // Iterar sobre cada archivo
         for (let i = 0; i < archivos.length; i++) {
             const archivo = archivos[i];
             const refArchivo = ref(storage, `documentos/${archivo.name}`);
-    
             try {
                 await uploadBytes(refArchivo, archivo);
                 const urlImagen = await getDownloadURL(refArchivo);
