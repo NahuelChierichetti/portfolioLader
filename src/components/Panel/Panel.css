@@ -65,6 +65,14 @@ button.btn-logout {
     color: rgb(215, 88, 88);
 }
 
+button.swal2-confirm.swal2-styled.swal2-default-outline {
+    background: #5e17ea !important;
+}
+
+div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm{
+    background: #5e17ea !important;
+}
+
 .table>:not(caption)>*>*{
     background-color: #fff;
 }

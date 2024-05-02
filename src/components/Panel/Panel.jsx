@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { HiOutlineTrash } from "react-icons/hi2";
 import { motion } from 'framer-motion';
 import { getAuth, signOut } from 'firebase/auth'
-
+import Swal from 'sweetalert2';
 import { auth } from '../../main';
 
 const Panel = ({correoUsuario}) => {
@@ -26,12 +26,35 @@ const Panel = ({correoUsuario}) => {
     }, [])
 
     const handleDelete = async (id) => {
-        try {
-            await deleteDoc(doc(db, 'proyectos', id));
-            const nuevosProyectos = proyectos.filter(proyecto => proyecto.id !== id);
-            setProyectos(nuevosProyectos);
-        } catch (error) {
-            console.error('Error al eliminar el proyecto:', error);
+        const confirmDelete = await Swal.fire({
+            title: '¿Estás seguro?',
+            text: 'Esta acción eliminará el proyecto de forma permanente.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, eliminar',
+            cancelButtonText: 'Cancelar'
+        });
+    
+        if (confirmDelete.isConfirmed) {
+            try {
+                await deleteDoc(doc(db, 'proyectos', id));
+                const nuevosProyectos = proyectos.filter(proyecto => proyecto.id !== id);
+                setProyectos(nuevosProyectos);
+                Swal.fire(
+                    '¡Eliminado!',
+                    'El proyecto ha sido eliminado correctamente.',
+                    'success'
+                );
+            } catch (error) {
+                console.error('Error al eliminar el proyecto:', error);
+                Swal.fire(
+                    'Error',
+                    'No se pudo eliminar el proyecto.',
+                    'error'
+                );
+            }
         }
     };
 
