@@ -25,6 +25,22 @@ label.labelForm.label-form {
 .card.card-body {
     background: #1E173F;
     padding: 120px;
+    border: none !important;
+}
+
+.password-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.password-group input {
+    width: 100%;
+}
+
+.password-group span {
+    margin-left: -40px;
+    padding-right: 20px;
 }
 
 .btnSubmit{
@@ -39,4 +55,13 @@ label.labelForm.label-form {
 
 .btnSubmit:hover{
     background: transparent !important;
+}
+
+@media screen and (max-width: 768px){
+    .bg-login{
+        display: none;
+    }
+    .card.card-body {
+        padding: 60px 20px;
+    }
 }

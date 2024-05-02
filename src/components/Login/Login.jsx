@@ -1,30 +1,33 @@
-import React from 'react'
+import { React, useState} from 'react'
 import imgLogin from './../../assets/img/bg-micuenta.jpg'
 import './Login.css'
-import { Navigate } from 'react-router-dom';
-
+import { useNavigate  } from 'react-router-dom';
 import { auth } from '../../main';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { Toaster, toast } from 'react-hot-toast';
+import { FaEyeSlash, FaEye } from 'react-icons/fa';
 
 const Login = () => {
+    const navigate = useNavigate();
+    const [showPassword, setShowPassword] = useState(false);
 
     const functAutentication = async(e) => {
         e.preventDefault();
         const correo = e.target.email.value;
         const password = e.target.password.value;
-        console.log(correo)
 
         try {
-            // Inicia sesión con el correo y la contraseña proporcionados
             await signInWithEmailAndPassword(auth, correo, password);
-            console.log("Inicio de sesión exitoso");
-
-            // Redirige al usuario al Panel después del inicio de sesión exitoso
-            return <Navigate to="/panel" />;
+            navigate('/panel');
         } catch (error) {
             console.error("Error al iniciar sesión:", error.message);
+            toast.error("Las credenciales incorrectas.")
         }
     }
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
 
   return (
     <div>
@@ -33,7 +36,7 @@ const Login = () => {
                 <div className="col-md-6 bg-login">
                     
                 </div>
-                <div className="col-md-6 bg-formLogin">
+                <div className="col-md-6 col-12 bg-formLogin">
                     <div className="padre">
                         <div className="card card-body">
                             <h3 className='title-login'>Iniciar sesión</h3>
@@ -44,10 +47,17 @@ const Login = () => {
                                 </div>
                                 <div className="form-group">
                                     <label className="labelForm label-form">Contraseña</label>
-                                    <input type='password' placeholder='Correo electrónico' id="password" />
+                                    <div className="password-group">
+                                        <input type={showPassword ? 'text' : 'password'} placeholder="Contraseña" id="password" />
+                                        <span onClick={togglePasswordVisibility}>{showPassword ? <FaEyeSlash /> : <FaEye />}</span>
+                                    </div> 
                                 </div>
                                 <button className='btn btn-primary mt-3 form-control btnSubmit' type='submit'>Iniciar sesión</button>
                             </form>
+                            <Toaster
+                                position="bottom-center"
+                                reverseOrder={true}
+                            />
                         </div>
                     </div>
                 </div>

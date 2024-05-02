@@ -30,7 +30,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/admin" element={usuario ? <Admin /> : <Login />} />
-          <Route path="/panel" element={usuario ? <Panel correoUsuario={usuario?.email} /> : <Login />} />
+          <Route path="/panel" element={usuario ? <Panel correoUsuario={usuario.email} /> : <Login />} />
           <Route path='/login' element={<Login />} />
           <Route path="/categoria/:categoryId" element={<ProjectListContainer />} />
           <Route path="/project/:id" element={<ProjectDetailContainer />} />

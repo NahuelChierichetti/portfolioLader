@@ -4,9 +4,12 @@ import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore'
 import { db } from '../../main'
 import { Link } from 'react-router-dom'
 import { HiOutlineTrash } from "react-icons/hi2";
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
+import { getAuth, signOut } from 'firebase/auth'
 
-const Panel = () => {
+import { auth } from '../../main';
+
+const Panel = ({correoUsuario}) => {
     const [proyectos, setProyectos] = useState([])
 
     useEffect(() => {
@@ -36,6 +39,10 @@ const Panel = () => {
         <div>
             <div className="container">
                 <div className="row">
+                    <div className='msj-bienvenido col-12'>
+                        <p>¡Bienvenido {correoUsuario}!</p>
+                        <button className='btn-logout' onClick={()=>signOut(auth)}>Cerrar sesión</button>
+                    </div>
                     <div className="col-md-6 col-12">
                         <div className='title-proyectos'>
                             <motion.h2

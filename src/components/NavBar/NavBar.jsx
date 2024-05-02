@@ -56,7 +56,7 @@ const NavBar = () => {
                 <Link to={'/categoria/DiseñoGrafico'}>Diseño Gráfico</Link>
               </li>
               <li className="uppercase link-menu">
-                <Link to={'/categoria/RedesSociales'}>Redes Sociales!</Link>
+                <Link to={'/categoria/RedesSociales'}>Redes Sociales</Link>
               </li>
             </ul>
           </div>
