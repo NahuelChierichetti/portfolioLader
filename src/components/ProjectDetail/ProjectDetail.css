@@ -2,31 +2,61 @@
     position: relative;
 }
 .container-detail {
-    margin: 80px 60px 60px;
+    margin: 60px 60px 60px;
 }
 
 .container-detail-heading {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .detail-title {
-    width: 60%;
+    width: 65%;
+    padding-left: 50px;
 }
-.detail-datos {
-    width: 25%;
-    margin-top: 20px;
+.container-detail-subheading .detail-datos {
+    width: 100% !important;
 }
+
 .detail-datos p{
     line-height: 1.8em;
 }
 .detail-title h2 {
-    font-size: 4em;
+    font-size: 7em;
     text-transform: uppercase;
     font-weight: 700;
-    margin-bottom: 20px;
+}
+h3.subtitle-detail {
+    font-size: 3em;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+a.link-visitar-web {
+    padding: 15px 40px;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: .3s ease-in-out;
+}
+a.link-visitar-web:hover{
+    background-color: #5e17ea;
+    color: #fff;
+    border-color: #5e17ea;
+    transition: .3s ease-in-out;
+}
+.container-detail-subheading {
+    display: flex;
+    padding-top: 80px;
+    align-items: center;
+}
+
+.container-detail-heading .img1 img {
+    height: 700px !important;
+    width: 750px !important;
 }
 p.title-serv {
-    font-size: 1.5em;
+    font-size: 2em;
     text-transform: uppercase;
     font-weight: 600;
     color: #b7f200;
@@ -81,6 +111,14 @@ a.link-return:hover {
     border-color: #fff;
     color: #fff;
     transition: .3s;
+}
+.container-detail-description p {
+    padding-top: 120px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 1.5em;
+    padding-bottom: 60px;
+    font-weight: 300;
 }
 
 

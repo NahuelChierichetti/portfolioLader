@@ -11,6 +11,8 @@ const Admin = () => {
     const [categoriasSeleccionadas, setCategoriasSeleccionadas] = useState([]);
     const [serviciosSeleccionados, setServiciosSeleccionados] = useState([]);
     const [urlImagen, setUrlImagen] = useState('');
+    const [urlImagen1, setUrlImagen1] = useState('');
+    const [urlImagen2, setUrlImagen2] = useState('');
     const [urlImagenes, setUrlImagenes] = useState([])
 
     const handleCategoriaChange = (event) => {
@@ -39,16 +41,16 @@ const Admin = () => {
 
     const guardarInfo = async (e) => {
         e.preventDefault();
-        //const cliente = e.target.cliente.value;
         const nombre = e.target.nombre.value;
+        const subtitulo = e.target.subtitulo.value;
         const descripcion = e.target.descripcion.value;
         const fechaFinalizacion = e.target.fechaFinalizacion.value;
         const link = e.target.link.value;
         const tipoProyecto = e.target.tipoProyecto.value;
     
         const newProyecto = {
-            //cliente: cliente,
             nombre: nombre,
+            subtitulo: subtitulo,
             descripcion: descripcion,
             fechaFinalizacion: fechaFinalizacion,
             link: link,
@@ -56,6 +58,8 @@ const Admin = () => {
             categoria: categoriasSeleccionadas || [],
             servicio: serviciosSeleccionados || [],
             imagen: urlImagen,
+            imagen1: urlImagen1,
+            imagen2: urlImagen2,
             imagenes: urlImagenes || []
         };
     
@@ -77,6 +81,30 @@ const Admin = () => {
             await uploadBytes(refArchivo, archivo);
             const urlImagen = await getDownloadURL(refArchivo);
             setUrlImagen(urlImagen);
+        } catch (error) {
+            console.error('Error al subir el archivo:', error);
+        }
+    };
+
+    const fileHandler1 = async (e) => {
+        const archivo1 = e.target.files[0];
+        const refArchivo1 = ref(storage, `documentos/${archivo1.name}`);        
+        try {
+            await uploadBytes(refArchivo1, archivo1);
+            const urlImagen1 = await getDownloadURL(refArchivo1);
+            setUrlImagen1(urlImagen1);
+        } catch (error) {
+            console.error('Error al subir el archivo:', error);
+        }
+    };
+
+    const fileHandler2 = async (e) => {
+        const archivo2 = e.target.files[0];
+        const refArchivo2 = ref(storage, `documentos/${archivo2.name}`);        
+        try {
+            await uploadBytes(refArchivo2, archivo2);
+            const urlImagen2 = await getDownloadURL(refArchivo2);
+            setUrlImagen2(urlImagen2);
         } catch (error) {
             console.error('Error al subir el archivo:', error);
         }
@@ -108,13 +136,13 @@ const Admin = () => {
                 <h3 className='add-title'>Agregar Proyecto</h3>
                     <div className="contenedor-form">
                         <form onSubmit={guardarInfo} className='formulario-create'>
-                            {/* <div className="form-group">
-                                <label className="labelForm" htmlFor="cliente">Cliente</label>
-                                <input type="text" id="cliente" name="cliente" placeholder="Nombre del cliente" />
-                            </div> */}
                             <div className="form-group">
                                 <label className="labelForm" htmlFor="nombre">Nombre</label>
                                 <input type="text" id="nombre" name="nombre" placeholder="Nombre del proyecto" />
+                            </div>
+                            <div className="form-group">
+                                <label className="labelForm" htmlFor="subtitulo">Subtitulo</label>
+                                <input type="text" id="subtitulo" name="subtitulo" placeholder="Subtitulo" />
                             </div>
                             <div className="form-group">
                                 <label className="labelForm">Fecha de finalización</label>
@@ -156,6 +184,14 @@ const Admin = () => {
                                 <label className="labelForm">Imágen principal</label>
                                 <input type="file" id="imagen" placeholder='Imagen del proyecto' className='form-control' onChange={fileHandler} />
                             </div>
+                            <div className="form-group">
+                                <label className="labelForm">Imágen detalle 1</label>
+                                <input type="file" id="imagen1" placeholder='Imagen del proyecto' className='form-control' onChange={fileHandler1} />
+                            </div>
+                            <div className="form-group">
+                                <label className="labelForm">Imágen detalle 2</label>
+                                <input type="file" id="imagen2" placeholder='Imagen del proyecto' className='form-control' onChange={fileHandler2} />
+                            </div>                            
                             <div className="form-group">
                                 <label className="labelForm">Imágenes del proyecto</label>
                                 <input type="file" id="imagenes" placeholder='Imágenes del proyecto' className='form-control' multiple onChange={filesHandler} />

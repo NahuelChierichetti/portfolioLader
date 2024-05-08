@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './ProjectDetail.css';
 import { motion, useInView } from 'framer-motion';
 
-const ProjectDetail = ({ imagen, nombre, servicio, fechaFinalizacion, descripcion, imagenes, link, tipoProyecto, cliente }) => {
+const ProjectDetail = ({ imagen, imagen1, imagen2, nombre, servicio, fechaFinalizacion, descripcion, imagenes, link, tipoProyecto, subtitulo }) => {
     
     const variants = {
         inicial: {
@@ -28,6 +28,9 @@ const ProjectDetail = ({ imagen, nombre, servicio, fechaFinalizacion, descripcio
     return (
         <div className='container-detail'>
             <div className="container-detail-heading">
+                <div className='img1'>
+                    <img src={imagen1} alt={nombre} />
+                </div>
                 <div className="detail-title">
                     <motion.h2
                         initial = {{
@@ -45,7 +48,7 @@ const ProjectDetail = ({ imagen, nombre, servicio, fechaFinalizacion, descripcio
                     >
                         {nombre}
                     </motion.h2>
-                    <motion.p
+                    <motion.h3
                         initial = {{
                             opacity: 0, 
                             y: 50
@@ -58,10 +61,14 @@ const ProjectDetail = ({ imagen, nombre, servicio, fechaFinalizacion, descripcio
                                 delay: 1.5
                             }
                         }}
+                        className='subtitle-detail'
                     >
-                        {descripcion}
-                    </motion.p>
+                        {subtitulo}
+                    </motion.h3>
+                    <Link to={link} target='_blank' className='link-visitar-web'>Visitar Sitio Web</Link>
                 </div>
+            </div>
+            <div className="container-detail-subheading">
                 <motion.div
                     initial = {{
                         opacity: 0, 
@@ -88,6 +95,27 @@ const ProjectDetail = ({ imagen, nombre, servicio, fechaFinalizacion, descripcio
                     <p className='title-serv'>Fecha de finalización</p>
                     <p className='subtitle-serv'>{fechaFinalizacion}</p>
                 </motion.div>
+                <div className='img2'>
+                    <img src={imagen2} alt={nombre} />
+                </div>
+            </div>
+            <div className='container-detail-description'>
+                <motion.p
+                    initial = {{
+                        opacity: 0, 
+                        y: 50
+                    }}
+                    animate = {{
+                        opacity: 1, 
+                        y: 0,
+                        transition: {
+                            duration: 1.5,
+                            delay: 1.5
+                        }
+                    }}
+                >
+                    {descripcion}
+                </motion.p>
             </div>
             <div className='container-detail-images'>
                 <motion.div
@@ -96,7 +124,6 @@ const ProjectDetail = ({ imagen, nombre, servicio, fechaFinalizacion, descripcio
                     animate="animate"
                     variants={variants}
                 >
-                    <img src={imagen} alt={nombre} />
                     {Array.isArray(imagenes) ? (
                         imagenes.map((imagenItem, index) => (
                             <img src={imagenItem} key={index} alt="" />
