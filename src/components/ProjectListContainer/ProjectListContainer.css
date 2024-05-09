@@ -1,11 +1,22 @@
-.title-proyectos {
+.title-proyectos-home {
+    margin: 60px;
+    text-align: center;
+}
+.title-proyectos{
     margin: 60px;
 }
 
-.title-proyectos h2 {
-    font-size: 4.5em;
-    margin-top: 80px;
-    font-weight: 700;
+.title-proyectos-home h2 {
+    font-size: 6em !important;
+    margin-top: 40px;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+}
+
+.title-proyectos-home h3 {
+    text-transform: uppercase;
+    font-size: 3em;
+    font-weight: 800;
 }
 
 .heading-proyectos p {
@@ -25,7 +36,7 @@
 
 .tipo-proyecto-desarrollo .submenu {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     margin-left: 60px;
     margin-right: 60px;
     margin-bottom: 60px;
@@ -35,21 +46,21 @@ ul.submenu li a {
     border: 1px solid;
     padding: 10px 20px;
     margin: 0px 10px;
-    border-radius: 10px;
+    border-radius: 30px;
     transition: .3s;
 }
 
 ul.submenu li a:hover{
-    background: linear-gradient(90deg, rgba(94, 23, 234, 1) 0%, rgba(225, 53, 157, 1) 100%);
+    background: #5e17ea;
     color: #fff !important;
-    border-color: #fff !important;
+    border-color: #5e17ea !important;
     transition: .3s;
 }
 
 .submenu li a.active {
-    background: linear-gradient(90deg, rgba(94, 23, 234, 1) 0%, rgba(225, 53, 157, 1) 100%);
+    background: #5e17ea;
     color: #fff !important;
-    border-color: #fff !important;
+    border-color: #5e17ea !important;
     transition: .3s;
 }
 
@@ -101,11 +112,11 @@ ul.submenu li a:hover{
 }
 
 @media screen and (max-width: 768px){
-    .title-proyectos {
-        margin: 20px;
+    .title-proyectos-home {
+        margin: 20px 0px;
     }
-    .title-proyectos h2{
-        margin-top: 40px;
+    .title-proyectos-home h2 {
+        font-size: 3em !important;
     }
     .tipo-proyecto-desarrollo .submenu {
         margin-left: 20px;
@@ -117,5 +128,8 @@ ul.submenu li a:hover{
     }
     .tipo-proyecto-desarrollo .submenu li {
         margin-bottom: 40px;
+    }
+    .title-proyectos-home h3 {
+        font-size: 2em;
     }
 }

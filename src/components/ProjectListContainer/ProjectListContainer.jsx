@@ -52,13 +52,19 @@ const ProjectListContainer = () => {
         <>
             {!loading ? (
                 <div id="proyectos">
-                    <div className='title-proyectos'>
+                    <div className='title-proyectos-home'>
                         <motion.h2
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1, transition: { duration: 1.5, delay: .5 } }}
                         >
-                            Proyectos realizados
+                            Proyectos
                         </motion.h2>
+                        <motion.h3
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1, transition: { duration: 1.5, delay: .8 } }}
+                        >
+                            Realizados
+                        </motion.h3>
                     </div>
                     {isDesarrolloWeb && (
                         <motion.div

@@ -5,6 +5,9 @@
     border-radius: 20px;
     position: relative;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card-proyecto::before {
@@ -23,58 +26,23 @@
     opacity: 1;
   }
 
-  .card-proyecto .tag-proyecto {
-    position: absolute;
-    bottom: 55px;
-    left: 30px;
-    color: #fff;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+  .subtitle-proyecto .tipo-proyecto {
     text-transform: uppercase;
     font-weight: 300;
-    font-size: .8em;
-    border-radius: 4px;
+    font-size: .9em;
 }
-  
-  .card-proyecto:hover .tag-proyecto {
-    opacity: 1;
-  }
 
-  .card-proyecto .tipo-proyecto {
-    position: absolute;
-    bottom: 80px;
-    left: 30px;
-    color: #fff;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    text-transform: uppercase;
-    font-weight: 300;
-    font-size: .8em;
-    border-radius: 4px;
-    background: rgb(94, 23, 234);
-    background: linear-gradient(90deg, rgba(94, 23, 234, 1) 0%, rgba(225, 53, 157, 1) 100%);
-    padding: 3px 5px;
+
+.subtitle-proyecto .tag-proyecto {
+  font-weight: 500;
+  font-size: 1em;
 }
   
-  .card-proyecto:hover .tipo-proyecto {
-    opacity: 1;
-  }
-  
-  .card-proyecto .title-proyecto {
-    position: absolute;
-    bottom: 20px;
-    left: 30px;
-    color: white;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 1.5em;
+.subtitle-proyecto .title-proyecto {
+  text-transform: uppercase;
+  font-size: 1.8em;
+  font-weight: 700;
 }
-  
-  .card-proyecto:hover .title-proyecto {
-    opacity: 1;
-  }
 
   .card-proyecto .link-proyecto {
     position: relative;
@@ -92,23 +60,29 @@
   }
 
   span.ver-proyecto {
-    padding: 15px 20px;
+    padding: 10px 20px;
     border-radius: 10px;
     color: #fff;
     font-weight: 500;
     border: 1px solid #fff;
-    border-radius: 10px;
+    border-radius: 30px;
     transition: .3s ease-in-out;
+    margin: 0px 5px;
 }
 
 span.ver-proyecto:hover {
-  padding: 15px 20px;
-  border-radius: 10px;
-  background: rgb(94,23,234);
-  background: linear-gradient(90deg, rgba(94,23,234,1) 0%, rgba(225,53,157,1) 100%);
+  background: #5e17ea;
+  border-color: #5e17ea;;
   color: #fff;
   font-weight: 500;
   transition: .3s ease-in-out;
+}
+.subtitle-proyecto {
+  text-align: center;
+}
+.container-visitar {
+  display: flex;
+  align-items: center;
 }
 
 @media screen and (max-width:768px){

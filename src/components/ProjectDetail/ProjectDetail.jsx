@@ -28,9 +28,23 @@ const ProjectDetail = ({ imagen, imagen1, imagen2, nombre, servicio, fechaFinali
     return (
         <div className='container-detail'>
             <div className="container-detail-heading">
-                <div className='img1'>
+                <motion.div 
+                    initial = {{
+                        opacity: 0,
+                        y: 50
+                    }}
+                    animate = {{
+                        opacity: 1, 
+                        y: 0,
+                        transition: {
+                            duration: 1.5,
+                            delay: 1.8
+                        }
+                    }}
+                    className='img1'
+                >
                     <img src={imagen1} alt={nombre} />
-                </div>
+                </motion.div>
                 <div className="detail-title">
                     <motion.h2
                         initial = {{
@@ -65,7 +79,22 @@ const ProjectDetail = ({ imagen, imagen1, imagen2, nombre, servicio, fechaFinali
                     >
                         {subtitulo}
                     </motion.h3>
-                    <Link to={link} target='_blank' className='link-visitar-web'>Visitar Sitio Web</Link>
+                    <motion.div 
+                        initial = {{
+                            opacity: 0,
+                            y: 50
+                        }}
+                        animate = {{
+                            opacity: 1, 
+                            y: 0,
+                            transition: {
+                                duration: 1.5,
+                                delay: 1.7
+                            }
+                        }}
+                    >
+                        <Link to={link} target='_blank' className='link-visitar-web'>Visitar Sitio Web</Link>
+                    </motion.div>
                 </div>
             </div>
             <div className="container-detail-subheading">
@@ -95,9 +124,23 @@ const ProjectDetail = ({ imagen, imagen1, imagen2, nombre, servicio, fechaFinali
                     <p className='title-serv'>Fecha de finalización</p>
                     <p className='subtitle-serv'>{fechaFinalizacion}</p>
                 </motion.div>
-                <div className='img2'>
+                <motion.div 
+                    initial = {{
+                        opacity: 0,
+                        y: 50
+                    }}
+                    animate = {{
+                        opacity: 1, 
+                        y: 0,
+                        transition: {
+                            duration: 1.5,
+                            delay: 1.8
+                        }
+                    }}
+                    className='img2'
+                >
                     <img src={imagen2} alt={nombre} />
-                </div>
+                </motion.div>
             </div>
             <div className='container-detail-description'>
                 <motion.p
@@ -110,7 +153,7 @@ const ProjectDetail = ({ imagen, imagen1, imagen2, nombre, servicio, fechaFinali
                         y: 0,
                         transition: {
                             duration: 1.5,
-                            delay: 1.5
+                            delay: 3.5
                         }
                     }}
                 >

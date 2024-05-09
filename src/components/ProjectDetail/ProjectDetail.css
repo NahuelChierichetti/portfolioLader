@@ -34,11 +34,13 @@ h3.subtitle-detail {
 }
 a.link-visitar-web {
     padding: 15px 40px;
-    border: 2px solid #fff;
+    border: 1px solid #fff;
     border-radius: 30px;
     font-weight: 500;
     transition: .3s ease-in-out;
+    font-size: 16px;
 }
+
 a.link-visitar-web:hover{
     background-color: #5e17ea;
     color: #fff;
@@ -137,12 +139,52 @@ a.link-return:hover {
     .detail-datos {
         width: 100%;
     }
+    .container-detail-heading{
+        display: flex !important;
+        flex-direction: column-reverse !important;
+    }
+    .container-detail-heading .detail-title {
+        padding-left: 0px;
+        margin-bottom: 60px !important;
+    }
+    .container-detail-heading .detail-title h2 {
+        font-size: 3em;
+    }
+    .container-detail-heading .detail-title h3 {
+        font-size: 1.8em;
+    }
+    .container-detail-heading .img1 img {
+        height: 400px !important;
+    }
+    .container-detail-subheading {
+        padding-top: 40px;
+        flex-direction: column;
+    }
+    p.title-serv {
+        font-size: 1.8em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #b7f200;
+        line-height: 1.5em;
+    }
+    .img2 {
+        margin-top: 40px;
+    }
+    .container-detail-description p {
+        padding-top: 60px;
+        font-size: 16px;
+        font-weight: 400;
+    }
+        
     .container-detail-images img {
         margin-bottom: 30px;
     }
     .container-detail-images img {
         height: 400px;
         object-fit: cover;
+    }
+    .container-detail-images {
+        margin: 0px 0px 80px 0px;
     }
     .container-return-proyectos {
         width: 100% !important;

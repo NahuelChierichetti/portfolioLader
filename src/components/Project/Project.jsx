@@ -19,7 +19,7 @@ const variants = {
   })
 }
 
-const Project = ({ id, nombre, imagen, servicio, index, tipoProyecto }) => {
+const Project = ({ id, nombre, imagen, servicio, index, tipoProyecto, link }) => {
     const divStyle = {
       backgroundImage: `url(${imagen})`,
       backgroundSize: 'cover',
@@ -27,26 +27,38 @@ const Project = ({ id, nombre, imagen, servicio, index, tipoProyecto }) => {
       backgroundPosition: 'center',
     };
 
-    const ref = useRef(null)
-    const estaVisto = useInView(ref, {
-      once: true
-    }) 
+    // const ref = useRef(null)
+    // const estaVisto = useInView(ref, {
+    //   once: true
+    // }) 
   
     return (
+      <>
       <motion.div
-        ref={ref}
         initial="inicial"
-        animate={estaVisto ? "animate" : ""}
+        animate="animate"
         variants={variants}
         custom={{index}}
         className='card-proyecto' 
         style={divStyle}
       >
-        <Link to={`/project/${id}`} className='link-proyecto'><span className='ver-proyecto'>Ver Proyecto</span></Link>
-        <p className='tag-proyecto'>{servicio.join(' | ')}</p>
+        <div className='container-visitar'>
+          <Link to={`/project/${id}`} className='link-proyecto'><span className='ver-proyecto'>Ver Proyecto</span></Link>
+          <Link to={link} className='link-proyecto' target='_blank'><span className='ver-proyecto'>Visitar web</span></Link>
+        </div>
+      </motion.div>
+      <motion.div
+        initial="inicial"
+        animate="animate"
+        variants={variants}
+        custom={{index}}
+        className='subtitle-proyecto'
+      >
         {tipoProyecto ? <p className='tipo-proyecto'>{tipoProyecto}</p> : ''}
+        <p className='tag-proyecto'>{servicio.join(' | ')}</p>
         <p className='title-proyecto'>{nombre}</p>
       </motion.div>
+      </>
     );
 };
 
