@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './ProjectDetail.css';
 import { motion, useInView } from 'framer-motion';
@@ -19,6 +19,11 @@ const ProjectDetail = ({ imagen, imagen1, imagen2, nombre, servicio, fechaFinali
             }
         })
     };
+
+    useEffect(() => {
+        // Cuando el componente se monta, desplázate a la parte superior de la página
+        window.scrollTo(0, 0);
+    }, []);
 
     const ref = useRef(null)
     const enVista = useInView(ref, {
