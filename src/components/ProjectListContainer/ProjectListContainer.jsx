@@ -77,6 +77,7 @@ const ProjectListContainer = () => {
                                 <li><Link to={'/categoria/DesarrolloWeb?type=Web Institucional'} className={type === 'Web Institucional' ? 'active' : ''}>Web Institucional</Link></li>
                                 <li><Link to={'/categoria/DesarrolloWeb?type=Ecommerce'} className={type === 'Ecommerce' ? 'active' : ''}>E-commerce</Link></li>
                                 <li><Link to={'/categoria/DesarrolloWeb?type=E-learning'} className={type === 'E-learning' ? 'active' : ''}>E-learning</Link></li>
+                                <li><Link to={'/categoria/DesarrolloWeb?type=Landing Page'} className={type === 'Landing Page' ? 'active' : ''}>Landing Page</Link></li>
                             </ul>
                         </motion.div>
                     )}

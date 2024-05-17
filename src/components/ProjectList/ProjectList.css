@@ -1,11 +1,14 @@
 .container-proyectos {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
     min-height: 100vh;
     flex-wrap: wrap;
-    padding-left: 60px;
+    padding-left: 0px;
+    padding-bottom: 60px;
 }
-
+.container-proyectos div {
+    margin-bottom: 20px;
+}
 @media screen and (max-width: 768px){
     .container-proyectos {
         display: flex;
@@ -14,5 +17,8 @@
         flex-wrap: wrap;
         padding-right: 30px !important;
         padding-left: 10px !important;
+    }
+    .container-proyectos div {
+        margin-bottom: 10px;
     }
 }
