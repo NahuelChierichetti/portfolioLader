@@ -19,7 +19,7 @@ const variants = {
   })
 }
 
-const Project = ({ id, nombre, imagen, servicio, index, tipoProyecto, link }) => {
+const Project = ({ id, nombre, imagen, servicio, index, tipoProyecto, link, subtitulo }) => {
     const divStyle = {
       backgroundImage: `url(${imagen})`,
       backgroundSize: 'cover',
@@ -56,7 +56,7 @@ const Project = ({ id, nombre, imagen, servicio, index, tipoProyecto, link }) =>
       >
         {tipoProyecto ? <p className='tipo-proyecto'>{tipoProyecto}</p> : ''}
         <p className='tag-proyecto'>{servicio.join(' | ')}</p>
-        <p className='title-proyecto'>{nombre}</p>
+        <p className='title-proyecto'>{nombre} {subtitulo}</p>
       </motion.div>
       </>
     );
