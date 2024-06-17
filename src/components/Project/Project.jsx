@@ -27,10 +27,8 @@ const Project = ({ id, nombre, imagen, servicio, index, tipoProyecto, link, subt
       backgroundPosition: 'center',
     };
 
-    // const ref = useRef(null)
-    // const estaVisto = useInView(ref, {
-    //   once: true
-    // }) 
+const isGraphicDesign = Array.isArray(servicio) ? servicio.includes("Diseño Gráfico") : servicio === "Diseño Gráfico";
+console.log(isGraphicDesign)
   
     return (
       <>
@@ -44,7 +42,7 @@ const Project = ({ id, nombre, imagen, servicio, index, tipoProyecto, link, subt
       >
         <div className='container-visitar'>
           <Link to={`/project/${id}`} className='link-proyecto'><span className='ver-proyecto'>Ver Proyecto</span></Link>
-          <Link to={link} className='link-proyecto' target='_blank'><span className='ver-proyecto'>Visitar web</span></Link>
+          {!isGraphicDesign ? <Link to={link} className='link-proyecto' target='_blank'><span className='ver-proyecto'>Visitar web</span></Link> : '' }
         </div>
       </motion.div>
       <motion.div

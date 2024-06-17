@@ -83,7 +83,7 @@ p.title-serv {
     padding: 20px 0px;
     border-radius: 10px;
     background: #0f172a;
-    width: 50%; /* Ajusta el ancho */
+    width: auto; /* Ajusta el ancho */
     max-width: 400px; /* Agrega un ancho máximo */
 }
 .container-return-proyectos a {
@@ -126,6 +126,90 @@ a.link-return:hover {
 .container-detail-images div img {
     max-height: 600px;
     margin: auto;
+}
+
+/* DISEÑO GRÁFICO */
+.logo-design {
+    margin: auto;
+    margin-bottom: 40px;
+}
+.container-detail-logo-design {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+.container-detail-logo-design .detail-datos {
+    margin-bottom: 60px !important;
+}
+.container-detail-logo-design .detail-datos p.subtitle-serv {
+    text-transform: uppercase;
+    font-size: 1.5em;
+}
+.container-mockup .img1-design img {
+    width: 100vw;
+    object-fit: cover;
+}
+.container-mockup .img2-design img {
+    width: 100vw;
+    object-fit: cover;
+}
+.container-design-description{
+    margin: 60px 0px;
+}
+.container-design-description h2 {
+    text-align: center;
+    font-size: 2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #b7f200;
+}
+.container-design-colores h2 {
+    text-align: center;
+    font-size: 2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #b7f200;
+}
+.container-design-tipografias h2 {
+    text-align: center;
+    font-size: 2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #b7f200;
+}
+.container-design-description p {
+    margin: 30px;
+    text-align: center;
+    font-size: 1.2em;
+}
+.itemsColores {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 60px 0;
+}
+.cardColor {
+    background: #fff;
+    padding: 10px 10px 20px;
+}
+.cardColor p {
+    color: #1E173F;
+    font-size: 1em;
+    font-weight: 500;
+    margin: 10px 0px 0px;
+    text-transform: uppercase;
+}
+.img-tipografias{
+    display: flex;
+    justify-content: center;
+}
+.img-tipografias img {
+    width: 50%;
+    padding: 60px;
+}
+.logo-design img {
+    height: 250px !important;
 }
 
 @media screen and (max-width: 768px){
@@ -193,5 +277,62 @@ a.link-return:hover {
         width: 100% !important;
         max-width: 100% !important;
         bottom: 0px;
+    }
+
+    /* DISEÑO GRÁFICO */
+    .container-mockup .img1-design img {
+        height: auto;
+        width: 100vw;
+        object-fit: cover;
+    }
+    .container-mockup .img2-design img {
+        height: auto;
+        width: 100vw;
+        object-fit: cover;
+    }
+    .img-tipografias {
+        flex-direction: column;
+    }
+    .img-tipografias img{
+        width: 100%;
+        padding: 40px;
+    }
+    .container-design-description h2 {
+        text-align: center;
+        font-size: 2em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #b7f200;
+    }
+    .container-design-colores h2 {
+        text-align: center;
+        font-size: 2em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #b7f200;
+    }
+    .container-design-tipografias h2 {
+        text-align: center;
+        font-size: 2em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #b7f200;
+    }
+    .container-mockup:last-child {
+        margin-top: 40px;
+    }
+    .itemsColores {
+        flex-wrap: wrap;
+        padding: 0px 50px;
+    }
+    .cardColor{
+        margin: auto;
+    }
+    .cardColor .color{
+        width: 80px !important;
+        height: 80px !important;
+    }
+    .logo-design {
+        padding: 40px 60px 0px;
     }
 }
